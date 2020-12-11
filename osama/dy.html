@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",function(event) {
+        document.querySelector(".item").addEventListener("click",function(){
+            var item=null;
+            var xttp=new XMLHttpRequest();
+            xttp.onreadystatechange=function() {
+                if((this.readyState==4)&&(this.status==200)){
+                    item=this.responseText;
+                    var xttp=new XMLHttpRequest();
+                    xttp.onreadystatechange=function() {
+                        if((this.readyState==4)&&(this.status==200)){
+                            var entry=JSON.parse(this.responseText)[0];
+                            item=item.replace(new RegExp("{{name}}","g"),entry.name);
+                            item=item.replace(new RegExp("{{description}}","g"),entry.description);
+                            document.querySelector("#content1").innerHTML=document.querySelector("#content1").innerHTML+item;
+                        }
+                    };
+                xttp.open("GET","information/item.json",true);
+                xttp.send(null);
+
+                }
+
+            };
+            xttp.open("GET","information/item.html",true);
+            xttp.send(null);
+        });
+    });
+    var n=1;
+    function loadItem(){
+        var item=null;
+        var xttp=new XMLHttpRequest();
+        xttp.onreadystatechange=function(){
+            if((this.readyState==4)&&(this.status==200)){
+                item=this.responseText;
+                var xttp=new XMLHttpRequest();
+                xttp.onreadystatechange=function() {
+
+                    if((this.readyState==4)&&(this.status==200)){
+                        var entry=JSON.parse(this.responseText)[n];
+                        item=item.replace(new RegExp("{{name}}","g"),entry.name);
+                        item=item.replace(new RegExp("{{description}}","g"),entry.description);
+                        document.querySelector("#content1").innerHTML+=item;
+                        n++;
+                    }
+                };
+                xttp.open("GET","information/item.json",true);
+                xttp.send(null);
+
+            }
+        };
+         xttp.open("GET","information/item.html",true);
+         xttp.send(null);
+    }
+    document.addEventListener("DOMContentLoaded",function(event) {
+        document.querySelector(".item1").addEventListener("click",function(){
+            var item1=null;
+            var xttp=new XMLHttpRequest();
+            xttp.onreadystatechange=function() {
+                if((this.readyState==4)&&(this.status==200)){
+                    item1=this.responseText;
+                    var xttp=new XMLHttpRequest();
+                    xttp.onreadystatechange=function() {
+                        if((this.readyState==4)&&(this.status==200)){
+                            var entry=JSON.parse(this.responseText)[0];
+                            item1=item1.replace(new RegExp("{{name}}","g"),entry.name);
+                            item1=item1.replace(new RegExp("{{description}}","g"),entry.description);
+                            document.querySelector("#content2").innerHTML=document.querySelector("#content2").innerHTML+item1;
+                        }
+                    };
+                xttp.open("GET","information/item1.json",true);
+                xttp.send(null);
+
+                }
+
+            };
+            xttp.open("GET","information/item1.html",true);
+            xttp.send(null);
+        });
+    });
+    var m=1;
+    function loadItem1(){
+        var item1=null;
+        var xttp=new XMLHttpRequest();
+        xttp.onreadystatechange=function(){
+            if((this.readyState==4)&&(this.status==200)){
+                item1=this.responseText;
+                var xttp=new XMLHttpRequest();
+                xttp.onreadystatechange=function() {
+                    if((this.readyState==4)&&(this.status==200)){
+                        var entry=JSON.parse(this.responseText)[m];
+                        item1=item1.replace(new RegExp("{{name}}","g"),entry.name);
+                        item1=item1.replace(new RegExp("{{description}}","g"),entry.description);
+                        document.querySelector("#content2").innerHTML+=item1;
+                        m++;
+                    }
+                };
+                xttp.open("GET","information/item1.json",true);
+                xttp.send(null);
+
+            }
+        };
+         xttp.open("GET","information/item1.html",true);
+         xttp.send(null);
+    }
+    document.addEventListener("DOMContentLoaded",function(event) {
+        document.querySelector(".item2").addEventListener("click",function(){
+            var item2=null;
+            var xttp=new XMLHttpRequest();
+            xttp.onreadystatechange=function() {
+                if((this.readyState==4)&&(this.status==200)){
+                    item2=this.responseText;
+                    var xttp=new XMLHttpRequest();
+                    xttp.onreadystatechange=function() {
+                        if((this.readyState==4)&&(this.status==200)){
+                            var entry=JSON.parse(this.responseText)[0];
+                            item2=item2.replace(new RegExp("{{name}}","g"),entry.name);
+                            item2=item2.replace(new RegExp("{{description}}","g"),entry.description);
+                            document.querySelector("#content3").innerHTML=document.querySelector("#content3").innerHTML+item2;
+                        }
+                    };
+                xttp.open("GET","information/item2.json",true);
+                xttp.send(null);
+
+                }
+
+            };
+            xttp.open("GET","information/item2.html",true);
+            xttp.send(null);
+        });
+    });
+    var k=1;
+    function loadItem2(){
+        var item2=null;
+        var xttp=new XMLHttpRequest();
+        xttp.onreadystatechange=function(){
+            if((this.readyState==4)&&(this.status==200)){
+                item2=this.responseText;
+                var xttp=new XMLHttpRequest();
+                xttp.onreadystatechange=function() {
+                    if((this.readyState==4)&&(this.status==200)){
+                        var entry=JSON.parse(this.responseText)[k];
+                        item2=item2.replace(new RegExp("{{name}}","g"),entry.name);
+                        item2=item2.replace(new RegExp("{{description}}","g"),entry.description);
+                        document.querySelector("#content3").innerHTML+=item2;
+                        k++;
+                    }
+                };
+                xttp.open("GET","information/item2.json",true);
+                xttp.send(null);
+
+            }
+        };
+         xttp.open("GET","information/item2.html",true);
+         xttp.send(null);
+    }
+</script>
+
+<style>
+  
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    h1 {
+        margin: 100px;
+        text-align: center;
+        font-family: Helvetica;
+        font-weight: bold;
+        font-size: 175%;
+    }
+
+    section {
+        position: relative;
+        padding: 15px;
+        width: 100%;
+    }
+
+    p {
+        position: relative;
+        clear: right;
+    }
+
+    div {
+        position: relative;
+        background-color: gray;
+        border: 1px solid black;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+    }
+
+    .a {
+        float: right;
+        width: 100px;
+        padding: 5px;
+        margin: 0px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 125%;
+        font-weight: bold;
+        background-color: blue;
+
+    }
+
+    .b {
+        float: right;
+        color: white;
+        width: 100px;
+        padding: 5px;
+        margin: 0px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 125%;
+        font-weight: bold;
+        background-color: red;
+
+    }
+
+
+    .c {
+        color: black;
+        float: right;
+        width: 100px;
+        padding: 5px;
+        margin: 0px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 125%;
+        font-weight: bold;
+        background-color: pink;
+
+    }
+
+
+    .con{
+        padding: 5px;
+        border: none;
+        background-color: gray;
+        font-family: Helvetica;
+        color: black;
+        margin: 0px;
+        height: 200px;
+        overflow: auto;
+    }
+
+
+    .row {
+        width: 90%;
+    }
+
+    /desktop version/
+
+    @media (min-width: 992px) {
+        .column-lg-4 {
+            float: left;
+            width: 33.33%;
+        }
+    }
+
+
+    /tablet version/
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .colmn-md-6 {
+            float: left;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .colmn-md-12 {
+            float: left;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    /mobile version/
+
+    @media (max-width: 767px) {
+        .colmn-sm-12 {
+            float: left;
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <h1>Our Menu</h1>
+
+    <section id="con1" class="column-lg-4 colmn-md-6 colmn-sm-12">
+        <div class="item">
+            <p class="a">Chicken</p>
+            <p class="con" >
+          chicken sandwitch , chicken smoothy(can be ordered with an alive chicken inside of it) , chicken with rice , grilled chiken , chicken soup , chicken with chicken , our special chicken dish .
+            </p>
+        </div>
+    </section>
+    <section id="con2" class="column-lg-4 colmn-md-6 colmn-sm-12">
+        <div class="item1">
+            <p class="b">Beef</p>
+            <p class="con" >small beef sandwich , large beef sandwitch , small dish of rice and beef , large dish of beef and rice , i don't know what to write , a 1000g of ready-to-grill beef , ask the accountant about our daily beef dish , beef and chicken sandwich .
+            </p>
+        </div>
+    </section>
+    <section id="con3" class="column-lg-4 colmn-md-12 colmn-sm-12">
+        <div class="item2">
+            <p class="c">Sushi</p>
+            <p class="con">our classical sushi , family sushi meal , su without a shi meal , 150g of sushi (with free bevarege) sushi with tamako sauce , sushi with tomato sauce , sushi with soy sauce , spicy sushi , sushi with beef and chicken sandwich "yayks" , party sushi meal . </p>
+        </div>
+</body>
+
+</html>
